@@ -3,7 +3,7 @@ const Card = (props) =>{
   return(
     <div onClick={props.toggleSelected} className="card">
       <img id="photo" src={props.photo} alt="" />
-      <h1>{props.name}</h1>
+      <p id="card-title">{props.name}</p>
     </div>
   )
 }
