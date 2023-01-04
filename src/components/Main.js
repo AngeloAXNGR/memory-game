@@ -23,14 +23,29 @@ const Main = () => {
 
   }, [game]);
 
-  const pickCards = (data) =>{
-    const length = 4;
+  const pickCards =  (data) =>{
+    let rngArray = generateRNG();
     let cardsArray = [];
-    for(let i = 0; i < length; i++){
-      const rng = Math.floor((Math.random() * data.length))
-      cardsArray.push(data[rng])
+    for(let i = 0; i < rngArray.length; i++){
+      // const rng = Math.floor((Math.random() * data.length-1))
+      cardsArray.push(data[rngArray[i]])
     }
     return cardsArray;
+  }
+
+  const generateRNG = () =>{
+    const length = 12;
+    const rngArray = []
+    for(let i = 0; i < length; i++){
+      const rng = Math.floor((Math.random() * 99))
+      if(!rngArray.find(item => item === rng)){
+        rngArray.push(rng)
+      }else{
+        i--;
+      }
+    }
+
+    return rngArray;
   }
 
   const parsePokemonData = async (data) =>{
