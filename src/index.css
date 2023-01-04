@@ -12,17 +12,61 @@ code {
     monospace;
 }
 
+.app{
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+header{
+  background-color: black;
+  text-align: center;
+  color:white;
+  width:100%;
+}
+
+main{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#score-board{
+  display:flex;
+  width: 800px;
+  justify-content: center;
+  gap: 100px;
+}
+
 .cards{
-  border:2px solid black;
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  width:800px;
+  margin: auto;
+  gap: 32px;
+  /* border:2px solid black; */
 }
 
 .card{
-  border:2px solid black;
+  flex:1;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  border-radius: 5px;
   text-align:center;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.card > h1{
+  text-transform: capitalize;
+}
+
+.card:hover{
+  box-shadow: 0 1px 20px rgba(0,0,0,0.5);
 }
 
 #photo{
-  width: 300px;
+  width: 100px;
 }
