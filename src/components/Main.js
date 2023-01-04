@@ -75,7 +75,6 @@ const Main = () => {
     return pokemonSprites;
   }
 
-
   const toggleSelected = (cardId) =>{
     const clicked = pokemonData.find(element => element.id === cardId)
     if(clicked.selected === true){
@@ -124,7 +123,7 @@ const Main = () => {
 
   return (
     <main>
-      <div className="score">
+      <div id="score-board">
         <h1>Current: {score}</h1>
         <h1>Best: {bestScore}</h1>
       </div>
